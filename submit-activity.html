@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Activity - ActiPoints</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📤 Submit Activity</h1>
+        <a href="dashboard.html" class="back-btn">⬅ Back to Dashboard</a>
+    </header>
+
+    <main id="activity-categories">
+
+        <div class="activity-list">
+            <div class="activity-item" onclick="toggleSubcategories('national')">National Initiatives
+                <div class="subcategories" id="national">
+                    <a href="submit-form.html?subcategory=ncc">NCC</a>
+                    <a href="submit-form.html?subcategory=nss"> NSS</a>
+                  
+                </div>
+            </div>
+
+            <div class="activity-item" onclick="toggleSubcategories('sports')">Sports & Games
+                <div class="subcategories" id="sports">
+                    <a href="submit-form.html?subcategory=university-team"> Sports</a>
+                    <a href="submit-form.html?subcategory=national-representation">Games</a>
+                   
+                </div>
+            </div>
+
+            <div class="activity-item" onclick="toggleSubcategories('cultural')"> Cultural Activities
+                <div class="subcategories" id="cultural">
+                    <a href="submit-form.html?subcategory=music"> Music</a>
+                    <a href="submit-form.html?subcategory=dance"> Performing Arts</a>
+                    <a href="submit-form.html?subcategory=literary"> Literary Arts</a>
+                   
+                </div>
+            </div>
+
+            <div class="activity-item" onclick="toggleSubcategories('professional')"> Professional Self Initiatives
+                <div class="subcategories" id="professional">
+                    <a href="submit-form.html?subcategory=technical-fest"> Tech Fest/Tech Quiz</a>
+                    <a href="submit-form.html?subcategory=MOOC"> MOOC</a>
+                    <a href="submit-form.html?subcategory=competitions"> Competitions conducted by Professional Societies (IEEE,IET, ASME, SAE,NASA etc.)</a>
+                    <a href="submit-form.html?subcategory=seminariit">Conference/Seminars /Exhibitions/ Workshop/ STTP conducted at IITs/NITs</a>
+                    <a href="submit-form.html?subcategory=seminarktu">Conference/Seminars /Exhibitions/ Workshop/ STTP conducted at KTU or its affiliated institutes</a>
+                    <a href="submit-form.html?subcategory=paperiit"> Paper presentation/ publication at IITs/ NITs</a>
+                    <a href="submit-form.html?subcategory=paperktu"> Paper presentation/ publication at KTU or its affiliated institutes</a>
+                    <a href="submit-form.html?subcategory=posteriit"> Poster Presentation at IITs /NITs</a>
+                    <a href="submit-form.html?subcategory=posterktu"> Poster Presentation at KTU or its affiliated institutes</a>
+                    <a href="submit-form.html?subcategory=internship"> Industrial Training/ Internship</a>
+                    <a href="submit-form.html?subcategory=IV"> Industrial/ Exhibition visits</a>
+                    <a href="submit-form.html?subcategory=language"> Foreign Language Skill (TOEFL/ IELTS/ BEC exams etc.)</a>
+                </div>
+            </div>
+
+            <div class="activity-item" onclick="toggleSubcategories('entrepreneurship')"> Entrepreneurship & Innovation
+                <div class="subcategories" id="entrepreneurship">
+                    <a href="submit-form.html?subcategory=startup"> Startup</a>
+                    <a href="submit-form.html?subcategory=patent"> Patent</a>
+                    <a href="submit-form.html?subcategory=Prototype"> Prototype developed and tested</a>
+                    <a href="submit-form.html?subcategory=Products"> Awards for Products developed</a>
+                    <a href="submit-form.html?subcategory=technologies"> Innovative technologies developed and used by industries/users</a>
+                    <a href="submit-form.html?subcategory=venture"> Got venture capital funding for innovative ideas/products.</a>
+                    <a href="submit-form.html?subcategory=Employment"> Startup Employment </a>
+                    <a href="submit-form.html?subcategory=business-plan"> Societal innovations </a>
+                </div>
+            </div>
+
+            <div class="activity-item" onclick="toggleSubcategories('leadership')"> Leadership & Management
+                <div class="subcategories" id="leadership">
+                    <a href="submit-form.html?subcategory=societies"> Student Professional Societies (IEEE, IET, ASME, SAE, NASA etc.)</a>
+                    <a href="submit-form.html?subcategory=association"> College Association Chapters (Mechanical, Civil, Electrical etc.)</a>
+                    <a href="submit-form.html?subcategory=festival"> Festival & Technical Events</a>
+                    <a href="submit-form.html?subcategory=hobby"> Hobby Clubs</a>
+                    <a href="submit-form.html?subcategory=student-council"> Elected student representatives</a>
+                </div>
+            </div>
+   

@@ -1,0 +1,31 @@
+<!DOCTYPE html>                                                     <!--prgm type -->
+<html lang="en">                                                    <!--<html>:beginning of file + doc language -->
+<head>                                                               <!--<information about the webpage (meta) -->
+    <meta charset="UTF-8">                                          <!--utf-8 charset allows emojis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--control how page looks on devices -->
+    <title>ActiPoints</title>                                       <!--tab name -->
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>                                                              <!--Contains everything visible on the webpage-->
+    <header>                                                        <!-- section at the top of the page -->
+        <h1>ActiPoints</h1>                                         <!-- Main heading -->
+        <p>Effortless tracking of extracurricular & co-curricular activities</p> <!--paragraph -->
+    </header>
+
+    <main id="homepage">                                            <!-- main: main content + id: name -->
+        <div id="project-description">                              <!--container for grouping elements-->
+            <h2>Welcome to ActiPoints</h2>
+            <p>Track, manage, and verify your activity points with ease.</p>
+        </div>
+    
+        <div id="login-options">
+            <h3>Login As</h3>
+            <button class="login-btn" onclick="setUserType('student')">Student</button> <!--<button> →Creates a clickable button-->
+            <button class="login-btn" onclick="setUserType('faculty')">Faculty</button> <!--class="login-btn" →Gives the button a class for styling-->
+            <button class="login-btn" onclick="setUserType('admin')">Admin</button>     <!--onclick="setUserType('')" →Runs the JS function setUserType('') when clicked-->
+        </div>
+    </main>
+</body>
+</html>
