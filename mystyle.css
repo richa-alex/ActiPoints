@@ -1,0 +1,599 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #AEC6CF;
+    color: white;
+    padding: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+button {
+    background: #AEC6CF;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #AEC6CF;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #AEC6CF;
+    color: white;
+}
+
+/* 🌟 Homepage Layout */
+#homepage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+#project-description {
+    width: 50%;
+    text-align: left;
+}
+
+#login-options {
+    width: 40%;
+    text-align: center;
+}
+
+/* 🌟 Login Buttons */
+.login-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    margin: 10px 0;
+    background: #AEC6CF;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: white;
+}
+
+/* 🌟 Login Section */
+#login-section {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#login-form input {
+    padding: 10px;
+    border: 2px solid #AEC6CF;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#login-form button {
+    background: #AEC6CF;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background: white;
+}
+
+/* 🌟 General Page Layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+}
+
+/* 🌟 HEADER (Top Section) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #AEC6CF;
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#logo {
+    margin: 0;
+}
+
+#welcome {
+    font-size: 16px;
+}
+
+#logout {
+    background: white;
+    color: #AEC6CF;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#logout:hover {
+    background: black;
+    color: white;
+}
+
+/* 🌟 Dashboard Layout - Ensure Full Height */
+main {
+    display: flex;
+    height: 100vh; /* Make main container full page height */
+}
+
+/* 🌟 Sidebar - Extend to Bottom */
+#sidebar {
+    width: 250px;
+    background: black;
+    padding: 20px;
+    height: 100vh; /* Ensures sidebar stretches down */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content down */
+}
+
+/* 🌟 Sidebar Menu Items */
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    flex-grow: 1; /* Allows menu to expand fully */
+}
+
+#sidebar ul li {
+    margin: 10px 0;
+}
+
+#sidebar ul li a {
+    display: block;
+    padding: 10px;
+    background: #AEC6CF;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#sidebar ul li a:hover {
+    background: white;
+}
+
+/* 🌟 Sidebar (Left Section) */
+#sidebar {
+    width: 20%;
+    background: #AEC6CF;
+    height: 100%;
+    padding-top: 20px;
+    text-align: left;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    background: black;
+    color: white;
+}
+
+/* 🌟 Notice Board (Increased Size) */
+#main-content {
+    width: 80%;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 🌟 Notice Board Container */
+.admin-section, .faculty-section, .student-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers everything inside */
+    justify-content: center;
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* 🌟 Notice Board */
+#event-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    background: black;
+    border-radius: 10px;
+    margin-top: 10px;
+    justify-content: center; /* Centers images inside */
+}
+
+/* 🌟 Event Posters */
+.event-poster {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+/* 🌟 Adjust Scrolling Container to Fit Larger Images */
+.scroll-container {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    height: 350px; /* Increased Height */
+    position: relative;
+    align-items: center;
+}
+
+/* 🌟 Make Event Posters Bigger (1:1 Aspect Ratio) */
+#event-list img {
+    width: 300px; /* Increased Size */
+    height: 300px; /* Maintain 1:1 Aspect Ratio */
+    object-fit: cover; /* Ensures image fills the space properly */
+    border-radius: 15px; /* Optional: Rounded Corners */
+    margin: 10px; /* Add spacing between images */
+}
+
+/* 🌟 Pause scrolling when hovering */
+.scroll-container:hover #event-list {
+    animation-play-state: paused;
+}
+
+/* 🌟 Event Upload */
+#upload-event {
+    margin-bottom: 10px;
+}
+
+#event-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: scrollLeft 20s linear infinite;
+}
+
+#event-list li {
+    padding: 10px;
+}
+
+
+/* 🌟 Smooth Scrolling */
+@keyframes scrollLeft {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Pause scrolling when hovering */
+.scroll-container:hover #event-list {
+    animation-play-state: paused;
+}
+
+/* 🌟 Rules Section */
+.rule {
+    background: black;
+    border: 2px solid #AEC6CF;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.rule h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #AEC6CF;
+}
+
+.rule p {
+    font-size: 14px;
+    color: white;
+}
+
+/* 🌟 Download Button */
+.download-btn {
+    display: block;
+    text-align: center;
+    background: #AEC6CF;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.download-btn:hover {
+    background: white;
+    color: black;
+}
+/* 🌟 Basic Info Section */
+#basic-info {
+    background: white;
+    border: 2px solid #AEC6CF;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#basic-info h2 {
+    color: #AEC6CF;
+    font-size: 22px;
+}
+
+#basic-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+#basic-info ul li {
+    background: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* 🌟 Rules Section */
+.rule {
+    background: black;
+    border: 2px solid #AEC6CF;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+/* 🌟 Download Button */
+.download-btn {
+    display: inline-block;
+    background: #AEC6CF;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.download-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* 🌟 Back Button */
+.back-btn {
+    background: black;
+    color: #AEC6CF;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* 🌟 Activity Categories */
+#activity-categories {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.activity-item {
+    display: block;
+    text-align: center;
+    background: #AEC6CF;
+    color: black;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.activity-item:hover {
+    background: white;
+    color: black;
+}
+
+/* 🌟 Activity Categories */
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 🌟 Main Category Buttons */
+.activity-item {
+    position: relative;
+    display: block;
+    text-align: center;
+    background: #AEC6CF;
+    color: black;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* 🌟 Subcategory Container (Initially Hidden) */
+.subcategories {
+    display: none;
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* 🌟 Subcategory Buttons */
+.subcategories a {
+    display: block;
+    background: #222;
+    color: #AEC6CF;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 5px 0;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.subcategories a:hover {
+    background: white;
+    color: black;
+}
+
+/*progressbar*/
+/* 🌟 Progress Section */
+#progress-section {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* 🌟 Progress Bar */
+/* 🌟 Progress Section */
+#progress-section {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* 🌟 Larger Progress Bar */
+.progress-bar {
+    background: #ccc;
+    width: 90%; /* Increased width */
+    height: 50px; /* Increased height */
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px auto;
+    border: 3px solid #AEC6CF;
+}
+
+/* 🌟 Progress Fill */
+#progress-fill {
+    background: #AEC6CF;
+    height: 100%;
+    color: black;
+    text-align: center;
+    line-height: 50px; /* Center text in bigger bar */
+    font-weight: bold;
+    font-size: 20px; /* Bigger text */
+    width: 0%;
+    transition: width 1s ease-in-out;
+}
+
+/* 🌟 Profile Section */
+#profile-section {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* 🌟 Profile Picture */
+#profile-pic-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #AEC6CF;
+}
+
+#upload-pic {
+    margin-top: 10px;
+}
+
+/* 🌟 Profile Info */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.profile-info label {
+    font-weight: bold;
+}
+
+.profile-info input {
+    padding: 10px;
+    border: 2px solid #AEC6CF;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* 🌟 Save Button */
+#save-profile {
+    background: #AEC6CF;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#save-profile:hover {
+    background: white;
+    color: black;
+}
+
