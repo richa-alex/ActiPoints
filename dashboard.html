@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ActiPoints</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+    <script defer src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+
+<!-- HEADER (Top Section) -->
+<header>
+    <h1 id="logo">ACTIPOINTS</h1>
+    <p id="welcome">Welcome, <span id="username"></span>!</p>
+    <button id="logout">Logout</button>
+</header>
+
+    <div id="main-container">
+        <!-- Sidebar (Left Section) -->
+        <nav id="sidebar">
+            <ul>
+                <li><a href="profile.html" onclick="loadSection('profile')">Profile Settings</a></li>
+                <li><a href="submit-activity.html" onclick="loadSection('submit-activity')">Submit Activity</a></li>
+                <li><a href="documents.html" onclick="loadSection('documents')">Documents</a></li>
+                <li><a href="progress.html" onclick="loadSection('progress')">Progress Bar</a></li>
+                <li><a href="rules.html" onclick="loadSection('rules')">Rules</a></li>
+                <li><a href="events.html" onclick="loadSection('events')">Events</a></li>
+                <li><a href="help.html" onclick="loadSection('help')">Help</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content (Center Section - Notice Board) -->
+        <div class="student-section">
+            <h2>📅 Notice Board - Upcoming Events</h2>
+            <div id="event-list"></div> <!-- Display events uploaded by admin -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

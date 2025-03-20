@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActiPoints</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">    
+</head>
+<body>
+    <div class="actipoints">ActiPoints</div>
+    <div class="track-manage-and-verify-your-activity-points-wit">
+        Track, manage, and verify your activity points with ease
+    </div>
+
+    <main id="homepage"> 
+        <div class="login-buttons-container">
+            <!-- Student Login -->
+            <div class="login-button">
+                <img src="{% static 'images/student_icon.png' %}" alt="Student Icon"> <!-- Use static path -->
+                <a href="{% url 'student_login' %}" class="button-9">Student Login</a>
+            </div>
+
+            <!-- Faculty Login -->
+            <div class="login-button">
+                <img src="{% static 'images/teacher_icon.jpg' %}" alt="Faculty Icon"> <!-- Use static path -->
+                <a href="{% url 'faculty_login' %}" class="button-12">Faculty Login</a>
+            </div>
+
+            <!-- Admin Login -->
+            <div class="login-button">
+                <img src="{% static 'images/admin_icon.avif' %}" alt="Admin Icon"> <!-- Use static path -->
+                <a href="{% url 'adminn_login' %}" class="button-14">Admin Login</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

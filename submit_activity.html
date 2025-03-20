@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Category</title>
+    <style>
+        body {
+            background-color: #AEC6CF; /* Light blue background */
+            color: #FFFFFF; /* White text */
+            font-family: "Helvetica", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+
+        .menu-icon-1 {
+            width: 64px;
+            height: 64px;
+            background: transparent; /* Removed white background */
+            cursor: pointer;
+            color: #FFFFFF; /* Set icon color to white */
+            font-size: 32px; /* Adjust icon size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .actipoints {
+            width: 293px;
+            height: 87px;
+            color: #FFFFFF;
+            font-family: "Alegreya Sans", sans-serif;
+            font-weight: bold;
+            font-size: 70px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+
+        .select-the-category {
+            width: 100%;
+            color: #FFFFFF;
+            font-family: "Alegreya Sans", sans-serif;
+            font-weight: bold;
+            font-size: 40px;
+            letter-spacing: 0.5px;
+            text-align: center; /* Center the heading */
+            margin-bottom: 20px; /* Space below the heading */
+        }
+
+
+        .category-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; /* Space between category buttons */
+        }
+
+
+        .button-11, .button-13, .button-15, .button-17, .button-19, .button-21 {
+            width: 437px;
+            height: 48px;
+            padding: 0px 16px;
+            background: #6E31DE; /* Purple background */
+            color: #FFFFFF;
+            border: 2px solid #6E31DE;
+            border-radius: 9px;
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer; /* Indicates the buttons are clickable */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+
+        .button-11:hover, .button-13:hover, .button-15:hover, .button-17:hover, .button-19:hover, .button-21:hover {
+            background-color: #5a1fc1; /* Darker purple on hover */
+        }
+
+
+        .back-button-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Space between arrow icon and text */
+            margin-top: 30px;
+            cursor: pointer; /* Indicates the back button is clickable */
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+
+        .arrow-back-icon-1 {
+            width: 27px;
+            height: 27px;
+            background: transparent; /* Removed white background */
+            color: #FFFFFF; /* Set arrow color to white */
+            font-size: 24px; /* Adjust arrow size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .button-23 {
+            width: 166px;
+            height: 48px;
+            padding: 0px 16px;
+            background: #6E31DE;
+            color: #FFFFFF;
+            border: 2px solid #6E31DE;
+            border-radius: 9px;
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+
+        .button-23:hover {
+            background-color: #5a1fc1; /* Darker purple on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Icon -->
+    <div class="menu-icon-1">☰</div>
+
+
+    <!-- ActiPoints Title -->
+    <div class="actipoints">ActiPoints</div>
+
+
+    <!-- Select the Category Heading -->
+    <div class="select-the-category">Select the Category</div>
+
+
+    <!-- Category Buttons -->
+    <div class="category-container">
+        <button class="button-11">National Initiatives</button>
+        <button class="button-13">Sports & Games</button>
+        <button class="button-15">Cultural Activities</button>
+        <button class="button-17">Professional Self Initiatives</button>
+        <button class="button-19">Entrepreneurship & Innovation</button>
+        <button class="button-21">Leadership & Management</button>
+       
+    </div>
+
+
+    <!-- Back Button with Arrow Icon -->
+    <div class="back-button-container" onclick="window.location.href='student_dashboard';">
+        <div class="arrow-back-icon-1">←</div>
+        <button class="button-23">Back</button>
+    </div>
+    <script>
+        // Universal category button handler
+        document.querySelectorAll('button[class^="button-"]').forEach(button => {
+            button.addEventListener('click', function() {
+                window.location.href = "{% url 'fill_form' %}";
+            });
+        });
+    </script>
+</body>
+</html>

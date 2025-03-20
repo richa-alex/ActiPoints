@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Events - ActiPoints</title>
+    <link rel="stylesheet" href="{% static 'css/upload_events.css' %}"> 
+</head>
+<body>
+<!-- Menu Icon and ActiPoints Title -->
+<div class="actipoints-1">
+    <div class="menu-icon-1" onclick="toggleMenu()">☰</div> <!-- Menu open/close button -->
+    ActiPoints
+</div>
+
+<!-- Top Right Icons (Bell and Logout) -->
+<div class="top-right-icons">
+    <div class="dashboard-button">
+        <a href="{% url 'adminn_dashboard' %}" class="button-11">⬅ Back to Dashboard</a>
+    </div>
+</div>
+
+<!-- Dashboard Container -->
+<div class="dashboard-container">
+    <!-- Menu Bar -->
+    <div class="menu-options" id="menuOptions">
+        <a href="{% url 'student_management' %}" style="text-decoration: none;">
+            <div class="student_management">Student Management</div>
+        </a>
+        <a href="{% url 'faculty_management' %}" style="text-decoration: none;">
+            <div class="faculty_management">Faculty Management</div>
+        </a>
+        <a href="{% url 'upload_events' %}" style="text-decoration: none;">
+            <div class="upload_events">Upload Events</div>
+        </a>
+        <a href="{% url 'rules' %}" style="text-decoration: none;">
+            <div class="rules">Rules</div>
+        </a>
+        <a href="{% url 'a_profile' %}" style="text-decoration: none;">
+            <div class="a_profile">My Profile</div>
+        </a>
+    </div>
+
+    <!-- Context Area (Upload Events) -->
+    <div class="context-area">
+        <div class="upload-events">
+            <h2>Upload Events</h2>
+
+            <!-- Upload Event Form -->
+            <form method="POST" enctype="multipart/form-data" class="event-form">
+                {% csrf_token %}
+                {{ form.as_p }}  <!-- Render the form fields -->
+                <button type="submit" name="add_event" class="button-23">Upload Event</button>
+            </form>
+
+            <!-- Display Upcoming Events -->
+            <h3>Upcoming Events</h3>
+            <div class="event-posters">
+                {% for event in events %}
+                    <div class="event-poster">
+                        <img src="{{ event.poster.url }}" alt="{{ event.title }}">
+                        <h4>{{ event.title }}</h4>
+                        <p>{{ event.description }}</p>
+                        <p>Date: {{ event.date }}</p>
+                        <!-- Delete Event Form -->
+                        <form method="POST" style="display: inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="event_id" value="{{ event.id }}">
+                            <button type="submit" name="delete_event" class="delete-button">Delete</button>
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to toggle menu visibility
+    function toggleMenu() {
+        const menuOptions = document.getElementById('menuOptions');
+        if (menuOptions.style.display === 'none') {
+            menuOptions.style.display = 'flex';
+        } else {
+            menuOptions.style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Events - ActiPoints</title>
+    <link rel="stylesheet" href="{% static 'css/faculty_dashboard.css' %}"> 
+</head>
+<body>
+<!-- Menu Icon and ActiPoints Title -->
+<div class="actipoints-1">
+    <div class="menu-icon-1" onclick="toggleMenu()">☰</div> <!-- Menu open/close button -->
+    ActiPoints
+</div>
+
+<div class="welcome-message">
+    Welcome, {{ faculty.username }}!  <!-- Display the faculty's username -->
+</div>
+
+<!-- Top Right Icons (Bell and Logout) -->
+<div class="top-right-icons">
+    <div class="notifications-icon-1">🔔</div> <!-- Bell icon for notifications -->
+    <div class="logout-button">
+        <a href="{% url 'index' %}" class="button-11">Logout</a>
+    </div>
+</div>
+
+<!-- Dashboard Container -->
+<div class="dashboard-container">
+    <!-- Menu Bar -->
+    <div class="menu-options" id="menuOptions">
+        <a href="{% url 'faculty_dashboard' %}" style="text-decoration: none;">
+            <div class="faculty_dashboard">Dashboard</div>
+        </a>
+        <a href="{% url 'faculty_events' %}" style="text-decoration: none;">
+            <div class="faculty_events">Events</div>
+        </a>
+        <a href="{% url 'rules' %}" style="text-decoration: none;">
+            <div class="rules">Rules</div>
+        </a>
+        <a href="{% url 'profile' %}" style="text-decoration: none;">
+            <div class="profile">My Profile</div>
+        </a>
+    </div>
+
+    <!-- Context Area (Faculty Events) -->
+    <div class="context-area">
+        <div class="events-list">
+            <h2>Upcoming Events</h2>
+            <div class="event-posters">
+                {% for event in events %}
+                    <div class="event-poster">
+                        <img src="{{ event.poster.url }}" alt="{{ event.title }}">
+                        <h4>{{ event.title }}</h4>
+                        <p>{{ event.description }}</p>
+                        <p>Date: {{ event.date }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to toggle menu visibility
+    function toggleMenu() {
+        const menuOptions = document.getElementById('menuOptions');
+        if (menuOptions.style.display === 'none') {
+            menuOptions.style.display = 'flex';
+        } else {
+            menuOptions.style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>

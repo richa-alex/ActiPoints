@@ -1,0 +1,27 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress - ActiPoints</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+    <script defer src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <header>
+        <h1>📊 Progress Tracker</h1>
+        <a href="dashboard.html" class="back-btn">⬅ Back to Dashboard</a>
+    </header>
+
+    <main id="progress-section">
+        <h2>Your Activity Points Progress</h2>
+        <p>You need <strong>100 points</strong> to qualify for the B.Tech degree.</p>
+
+        <div class="progress-bar">
+            <div id="progress-fill">0%</div>
+        </div>
+
+        <p><strong>Points Earned:</strong> <span id="points-earned">0</span> / 100</p>
+    </main>
+</body>
+</html>

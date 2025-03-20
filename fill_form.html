@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details Form</title>
+    <style>
+        body {
+            background-color: #AEC6CF;
+            color: #FFFFFF;
+            font-family: "Helvetica", sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+
+        .menu-icon-1 {
+            width: 64px;
+            height: 64px;
+            background: transparent;
+            cursor: pointer;
+        }
+
+
+        .actipoints-1 {
+            width: 293px;
+            height: 87px;
+            color: #FFFFFF;
+            font-family: "Alegreya Sans";
+            font-weight: bold;
+            font-size: 70px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+
+        .enter-the-event-details-and-add-to-your-points- {
+            width: 523px;
+            height: 36px;
+            color: #FFFFFF;
+            font-family: "Helvetica";
+            font-weight: 400;
+            font-size: 24px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+
+        /* Add fixed width for labels */
+        .form-row label {
+            width: 160px; /* Fixed width for all labels */
+            text-align: right;
+            font-size: 26px;
+        }
+
+
+        /* Standardize input fields */
+        .text-area-1, .text-area-2, .text-area-3,
+    .text-area-4, .text-area-5, .text-area-6 {
+        color: #000000; /* Black text for both input and placeholder */
+        /* Rest of your existing styles */
+        width: 300px;
+        height: 36px;
+        padding: 4px 8px;
+        background: #FFFFFF;
+        border: 1px solid #FFFFFF;
+        border-radius: 3px;
+        font-family: "Helvetica";
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+
+    /* Placeholder text */
+    ::placeholder {
+        color: #000000; /* Black placeholder text */
+        opacity: 0.7; /* Slightly transparent for distinction */
+    }
+    .button-11 {
+        width: 300px; /* Match input field width */
+        margin-left: 160px; /* Align with input fields */
+        height: 50px;
+        padding: 0px 16px;
+        background: #6E31DE;
+        color: #FFFFFF;
+        border: 2px solid #6E31DE;
+        border-radius: 9px;
+        font-family: "Inter";
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 0; /* Remove previous margin */
+    }
+
+
+        .back-button-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+
+        .button-13 {
+            width: 166px;
+            height: 48px;
+            padding: 0px 16px;
+            background: #6E31DE;
+            color: #FFFFFF;
+            border: 2px solid #6E31DE;
+            border-radius: 9px;
+            font-family: "Inter";
+            font-weight: 400;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+
+        .arrow-back-icon-1 {
+            width: 27px;
+            height: 27px;
+            background: transparent;
+            color: #FFFFFF;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-icon-1">☰</div>
+    <div class="actipoints-1">ActiPoints</div>
+    <div class="back-button-container" onclick="window.location.href='submit-activity.html';">
+        <div class="arrow-back-icon-1">←</div>
+        <button class="button-13">Back</button>
+    </div>
+
+
+    <div class="enter-the-event-details-and-add-to-your-points-">
+        Enter the event details and add to your Points!
+    </div>
+
+
+    <div class="form-container">
+        <div class="form-row">
+            <label class="event-title-">Event Title:</label>
+            <input type="text" class="text-area-1" placeholder="Enter Title">
+        </div>
+
+
+        <div class="form-row">
+            <label class="category-">Category:</label>
+            <input type="text" class="text-area-2" placeholder="Enter Event">
+        </div>
+
+
+        <div class="form-row">
+            <label class="achievement-">Achievement:</label>
+            <input type="text" class="text-area-3" placeholder="Enter Position">
+        </div>
+
+
+        <div class="form-row">
+            <label class="zone-">Zone:</label>
+            <input type="text" class="text-area-4" placeholder="Enter Zone Level">
+        </div>
+
+
+        <div class="form-row">
+            <label class="points-">Points:</label>
+            <input type="text" class="text-area-5" placeholder="Update your Certificate">
+        </div>
+        <a href="{% url 'success' %}" class="button-11">Submit</a>
+    </div>
+</body>
+</html>
+
+

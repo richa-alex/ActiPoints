@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActiPoints Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/faculty_dashboard.css' %}"> 
+</head>
+<body>
+<!-- Menu Icon and ActiPoints Title -->
+<div class="actipoints-1">
+<div class="menu-icon-1" onclick="toggleMenu()">☰</div> <!-- Menu open/close button -->
+ActiPoints
+</div>
+
+<div class="welcome-message">
+    Welcome, {{ faculty.username }}!  <!-- Display the faculty's username -->
+</div>
+
+<!-- Top Right Icons (Bell and Logout) -->
+<div class="top-right-icons">
+<div class="notifications-icon-1">🔔</div> <!-- Bell icon for notifications -->
+<div class="logout-button">
+    <a href="{% url 'index' %}" class="button-11">Logout</a>
+</div>
+</div>
+
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Menu Bar -->
+            <div class="menu-options" id="menuOptions">
+                <a href="{% url 'submit_activity' %}" style="text-decoration: none;">
+                    <div class="submit_activity">Submit Activity</div>
+                </a>
+                <a href="" style="text-decoration: none;">
+                    <div class="progress">Progress</div>
+                </a>
+                <a href="{% url 'rules' %}" style="text-decoration: none;">
+                    <div class="rules">Rules</div>
+                </a>
+                <a href="" style="text-decoration: none;">
+                    <div class="events">Events</div>
+                </a>
+                <a href="{% url 'profile' %}" style="text-decoration: none;">
+                    <div class="profile">My Profile</div>
+                </a>
+            </div>
+
+<!-- Context Area (Centered Upcoming Events) -->
+<div class="context-area">
+    <div class="upcoming-events">UPCOMING EVENTS</div>
+    <div class="event-posters">
+        <!-- Poster 1 -->
+        <div class="event-poster">
+            <img src="{% static 'poster_1.jpg' %}" alt="poster_1">
+        </div>
+
+
+        <!-- Poster 2 -->
+        <div class="event-poster">
+            <img src="{% static 'poster_2.jpg' %}" alt="poster_2">
+        </div>
+
+
+        <!-- Poster 3 -->
+        <div class="event-poster">
+            <img src="{% static 'poster_3.jpg' %}" alt="poster_3">
+        </div>
+    </div>
+</div>
+</div>
+   
+    <script>
+        // Function to toggle menu visibility
+        function toggleMenu() {
+            const menuOptions = document.getElementById('menuOptions');
+            if (menuOptions.style.display === 'none') {
+                menuOptions.style.display = 'flex';
+            } else {
+                menuOptions.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
