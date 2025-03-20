@@ -1,0 +1,156 @@
+/* General Styles */
+body {
+    font-family: "Alegreya Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #AEC6CF;
+}
+
+.actipoints-1 {
+    width: 293px;
+    height: 87px;
+    color: #FFFFFF;
+    font-family: "Alegreya Sans";
+    font-weight: bold;
+    font-size: 70px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    padding: 10px;
+    background-color: #AEC6CF;
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon-1 {
+    width: 64px;
+    height: 64px;
+    background: #AEC6CF;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.welcome-message {
+    padding: 10px;
+    background-color: #AEC6CF;
+    color: white;
+    text-align: center;
+    font-family: "Alike", serif;
+    font-size: 18px;
+}
+
+.top-right-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.notifications-icon-1 {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.logout-button .button-11 {
+    background-color: #5a1fc7;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.logout-button .button-11:hover {
+    background-color: #5a1fc7;
+}
+
+.dashboard-container {
+    display: flex;
+    margin: 20px;
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: #AEC6CF;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu-options a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    font-family: "Alike", serif;
+    font-size: 18px;
+}
+
+.menu-options a:hover {
+    background-color: #AEC6CF;
+}
+
+.context-area {
+    flex-grow: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Events List Styles */
+.events-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.events-list h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #AEC6CF;
+}
+
+.event-posters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.event-poster {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.event-poster img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.event-poster h4 {
+    margin: 10px 0 5px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.event-poster p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Scrollbar Styles */
+.scrollbar-1 {
+    width: 12px;
+    height: 570px;
+    background: #AEC6CF;
+    border: 1px solid #000000;
+    border-radius: 12px;
+}

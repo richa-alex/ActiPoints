@@ -1,0 +1,65 @@
+/* 🌟 Profile Section */
+#profile-section {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* 🌟 Profile Picture */
+#profile-pic-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #AEC6CF;
+}
+
+#upload-pic {
+    margin-top: 10px;
+}
+
+/* 🌟 Profile Info */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.profile-info label {
+    font-weight: bold;
+}
+
+.profile-info input {
+    padding: 10px;
+    border: 2px solid #AEC6CF;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* 🌟 Save Button */
+#save-profile {
+    background: #AEC6CF;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#save-profile:hover {
+    background: white;
+    color: black;
+}
+

@@ -1,0 +1,178 @@
+body {
+    background-color: #AEC6CF;
+    color: #FFFFFF;
+    font-family: "Helvetica", sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+
+.actipoints-1 {
+    width: 293px;
+    height: 70px;
+    color: #FFFFFF;
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between menu icon and ActiPoints text */
+}
+
+
+.menu-icon-1 {
+    width: 40px;
+    height: 90px;
+    background: #AEC6CF;
+    cursor: pointer; /* Indicates the menu icon is clickable */
+    margin-top: 80px;
+    margin-bottom: 80px;
+    font-size: 60px;
+}
+
+
+.notifications-icon-1 {
+    width: 10px;
+    height: 60px;
+    color: purple;
+    background: #AEC6CF;
+    cursor: pointer; /* Indicates the bell icon is clickable */
+    margin-top: 22px;
+    margin-bottom: 20px;
+    margin-right: 230px;
+    font-size: 30px;
+}
+
+
+.welcome-richa {
+    width: 250px;
+    height: 39px;
+    color: #FFFFFF;
+    font-family: "Helvetica", sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 90px;
+}
+
+
+.dashboard-container {
+    display: flex;
+    gap: 50px;
+    margin-top: 30px; /* Moved menu bar further down */
+}
+
+
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.menu-options a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+.submit-activity, .progress, .rules, .events, .profile {
+    width: auto;
+    height: 36px;
+    color: #FFFFFF;
+    font-family: "Helvetica", sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    text-align: left;
+    margin-top: 10px;
+    cursor: pointer; /* Indicates the menu options are clickable */
+}
+
+
+.context-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.upcoming-events {
+    width: 100%;
+    height: 36px;
+    color: #FFFFFF;
+    font-family: "Bungee Inline";
+    font-weight: 400;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.event-posters {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.event-poster {
+    width: 200px;
+    height: 300px;
+    background-color: #6E31DE;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.event-poster img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+.button-11 {
+    width: 166px;
+    height: 48px;
+    padding: 0px 16px;
+    background: #6E31DE;
+    color: #FFFFFF;
+    border: 2px solid #6E31DE;
+    border-radius: 9px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+
+.button-11:hover {
+    background: #5a1fc1;
+}
+
+
+.top-right-icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between bell icon and logout button */
+}
+

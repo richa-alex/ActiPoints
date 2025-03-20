@@ -1,0 +1,39 @@
+/*progressbar*/
+/* 🌟 Progress Section */
+#progress-section {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* 🌟 Progress Bar */
+/* 🌟 Progress Section */
+#progress-section {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* 🌟 Larger Progress Bar */
+.progress-bar {
+    background: #ccc;
+    width: 90%; /* Increased width */
+    height: 50px; /* Increased height */
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px auto;
+    border: 3px solid #AEC6CF;
+}
+
+/* 🌟 Progress Fill */
+#progress-fill {
+    background: #AEC6CF;
+    height: 100%;
+    color: black;
+    text-align: center;
+    line-height: 50px; /* Center text in bigger bar */
+    font-weight: bold;
+    font-size: 20px; /* Bigger text */
+    width: 0%;
+    transition: width 1s ease-in-out;
+}
