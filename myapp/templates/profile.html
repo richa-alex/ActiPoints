@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - ActiPoints</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #AEC6CF;
+            font-family: "Helvetica", sans-serif;
+            padding: 40px 20px;
+        }
+        .profile-container {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #6E31DE;
+            padding-bottom: 15px;
+        }
+        .profile-title {
+            color: #6E31DE;
+            font-weight: bold;
+            font-size: 28px;
+        }
+        .detail-row {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .detail-label {
+            width: 200px;
+            font-weight: bold;
+            color: #6E31DE;
+            font-size: 18px;
+        }
+        .detail-value {
+            flex: 1;
+            font-size: 18px;
+            color: #2E2E2E;
+        }
+        .password-form {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #E0E0E0;
+        }
+        .btn-primary {
+            background-color: #6E31DE;
+            border-color: #6E31DE;
+        }
+        .btn-primary:hover {
+            background-color: #5a1fc1;
+            border-color: #5a1fc1;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1 class="profile-title">My Profile</h1>
+            <a href="{% url 'student_dashboard' %}" class="btn btn-outline-secondary">Back to Dashboard</a>
+        </div>
+
+        <!-- Profile Details Section -->
+        <div class="profile-details">
+            <div class="detail-row">
+                <div class="detail-label">Username:</div>
+                <div class="detail-value">{{ user.username }}</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Email:</div>
+                <div class="detail-value">{{ user.email }}</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Registration Number:</div>
+                <div class="detail-value">{{ user.regno }}</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Role:</div>
+                <div class="detail-value">{{ user.get_role_display }}</div>
+            </div>
+        </div>
+
+      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,182 @@
+/* General Styles */
+body {
+    font-family: "Alegreya Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #AEC6CF;
+}
+
+.actipoints-1 {
+    width: 293px;
+    height: 70px;
+    color: #FFFFFF;
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between menu icon and ActiPoints text */
+}
+
+
+.menu-icon-1 {
+    width: 60px;
+    height: 90px;
+    background: #AEC6CF;
+    cursor: pointer; /* Indicates the menu icon is clickable */
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: 20px;
+    font-size: 60px;
+}
+
+.top-right-icons {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-button .button-11 {
+    height: 30px;
+    background-color: #5a1fc7;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 9px;
+    text-decoration: none; /* Remove underline */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.dashboard-button .button-11:hover {
+    background-color: #5a1fc7;
+}
+
+.dashboard-container {
+    display: flex;
+    margin: 20px;
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: #AEC6CF;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu-options a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    font-family: "Alike", serif;
+    font-size: 18px;
+}
+
+.menu-options a:hover {
+    background-color: #AEC6CF;
+}
+
+.student_management, .faculty_management, .rules, .upload_events, .a_profile {
+    width: auto;
+    height: 36px;
+    color: #FFFFFF;
+    font-family: "Helvetica", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 20px;
+    cursor: pointer; /* Indicates the menu options are clickable */
+}
+
+.context-area {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+/* Student Management Styles */
+.student-management {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.student-form {
+    margin-bottom: 20px;
+}
+
+.student-form input {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.student-form button {
+    background-color: #6E31DE;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 9px;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+}
+
+.student-form button:hover {
+    background-color: #5a1fc7;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.student-table th, .student-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.student-table th {
+    background-color: #AEC6CF;
+    color: white;
+}
+
+.delete-button {
+    background-color: #5a1fc7;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.delete-button:hover {
+    background-color: #5a1fc7;
+}
+
+/* Scrollbar Styles */
+.scrollbar-1 {
+    width: 12px;
+    height: 570px;
+    background: #AEC6CF;
+    border: 1px solid #000000;
+    border-radius: 12px;
+}

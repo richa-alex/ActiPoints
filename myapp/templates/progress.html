@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Consistent with the provided CSS */
+        body {
+            background-color: #AEC6CF;
+            color: #FFFFFF;
+            font-family: "Helvetica", sans-serif;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            /* For positioning the back button */
+        }
+
+        .actipoints-1 {
+            width: 293px;
+            height: 87px;
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 60px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar-1 {
+            width: 758px;
+            height: 20px;
+            /* Thicker progress bar */
+            background: #FFFFFF;
+            border: 1px solid #355723;
+            border-radius: 10px;
+            /* Rounded corners */
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 40%;
+            /* Example progress (40%) */
+            background: #629C44;
+            /* Green for progress */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        .you-are-40-there- {
+            width: 222px;
+            height: 36px;
+            color: #2c3e50;
+            font-family: "Helvetica";
+            font-weight: 400;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .your-achievements- {
+            width: 249px;
+            height: 28px;
+            color: #FFFFFF;
+            font-family: "Helvetica";
+            font-weight: bold;
+            font-size: 26px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .activity-container {
+            background: #FFFFFF;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .activity-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 2px solid #C7C7CC;
+        }
+
+        .activity-row:last-child {
+            border-bottom: none;
+        }
+
+        .activity-name {
+            width: 599px;
+            color: #030303;
+            font-family: "Helvetica";
+            font-weight: 400;
+            font-size: 17px;
+            text-align: left;
+        }
+
+        .activity-status {
+            width: 100px;
+            padding: 5px;
+            border-radius: 4px;
+            text-align: center;
+            font-family: "Helvetica";
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .activity-status.pending {
+            background: #B70F0A;
+            /* Red for pending */
+            color: #FFFFFF;
+        }
+
+        .activity-status.approved {
+            background: #629C44;
+            /* Green for approved */
+            color: #FFFFFF;
+        }
+
+        .view-document {
+            cursor: pointer;
+            color: #6E31DE;
+            font-size: 18px;
+        }
+
+        .view-document:hover {
+            color: #5a1fc9;
+            /* Darker purple on hover */
+        }
+
+        .document-dropdown {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #F8F9FA;
+            border: 1px solid #C7C7CC;
+            border-radius: 6px;
+        }
+
+        .document-dropdown a {
+            color: #6E31DE;
+            text-decoration: none;
+        }
+
+        .document-dropdown a:hover {
+            text-decoration: underline;
+        }
+
+        .button-11 {
+            width: 166px;
+            height: 48px;
+            padding: 0 16px;
+            background: #6E31DE;
+            color: #FFFFFF;
+            border: 2px solid #6E31DE;
+            border-radius: 9px;
+            font-family: "Inter";
+            font-weight: 400;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-decoration: none; /* Remove underline */
+            display: flex; /* Use flexbox */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+        }
+
+        .button-11:hover {
+            background: #5a1fc9;
+        }
+
+        .verified,
+        .pending ,.rejected{
+            width: 104px;
+            color: #000000;
+            font-family: "Helvetica";
+            font-weight: 700;
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .activity-status.rejected {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.rejection-reason {
+    color: #6c757d;
+    font-style: italic;
+    margin-left: 10px;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Back Button -->
+    <div class="dashboard-button">
+        <a href="{% url 'student_dashboard' %}" class="button-11">Back to Dashboard</a>
+    </div>
+    
+    <div class="actipoints-1">ActiPoints</div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-1">
+        <div class="progress-bar-fill" style="width: {{ progress_percentage }}%;"></div>
+    </div>
+    <p>Total Points: 
+        {% if total_points > 100 %}
+            100
+        {% else %}
+            {{ total_points }}
+        {% endif %} / 100
+    </p>
+
+ <!-- Verified Activities -->
+<div class="verified">Verified</div>
+<div class="activity-container">
+    {% for sub in approved_submissions %}
+        {% if sub.3 == 'approved' %}
+        <div class="activity-row">
+            <div class="activity-name">{{ sub.1 }}</div>
+            <div class="activity-status approved">Approved <br/>({{ sub.2 }} points)</div>
+        </div>
+        {% endif %}
+    {% empty %}
+        <div class="activity-row">No verified activities yet</div>
+    {% endfor %}
+</div>
+
+<!-- Pending Activities -->
+<div class="pending">Pending</div>
+<div class="activity-container">
+    {% for sub in pending_submissions %}
+        {% if sub.3 == 'pending' %}
+        <div class="activity-row">
+            <div class="activity-name">{{ sub.1 }}</div>
+            <div class="activity-status pending">Pending <br/>({{ sub.2 }} points)</div>
+        </div>
+        {% endif %}
+    {% empty %}
+        <div class="activity-row">No pending activities</div>
+    {% endfor %}
+</div>
+
+<!-- Rejected Activities -->
+<div class="rejected">Rejected</div>
+<div class="activity-container">
+    {% for sub in rejected_submissions %}
+        {% if sub.3 == 'rejected' %}
+        <div class="activity-row">
+            <div class="activity-name">{{ sub.1 }}</div>
+            {% if sub.3 %}
+            <div class="rejection-reason">Reason: {{ sub.6 }}</div>
+            {% endif %}
+        </div>
+        {% endif %}
+    {% empty %}
+        <div class="activity-row">No rejected activities</div>
+    {% endfor %}
+</div>
+
+   
+    <script>
+        // Function to toggle document dropdown
+        function toggleDocument(activity) {
+            const dropdown = document.getElementById(`${activity}-document`);
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        }
+        function resubmitActivity(activityId) {
+    if (confirm("Would you like to resubmit this activity with corrections?")) {
+        // Redirect to a resubmission page or show a modal
+        window.location.href = `/resubmit-activity/${activityId}/`;
+    }
+}
+    </script>
+</body>
+
+</html>

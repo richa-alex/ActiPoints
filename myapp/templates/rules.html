@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Events - ActiPoints</title>
+    <link rel="stylesheet" href="{% static 'css/rules.css' %}">
+</head>
+<body>
+<!-- Menu Icon and ActiPoints Title -->
+<div class="actipoints-1">
+    <div class="menu-icon-1" onclick="toggleMenu()">☰</div> <!-- Menu open/close button -->
+    ActiPoints
+</div>
+
+
+<!-- Top Right Icons (Bell and Logout) -->
+<div class="top-right-icons">
+    <div class="dashboard-button">
+        <a href="{% url 'student_dashboard' %}" class="button-11">⬅ Back to dashboard </a>
+    </div>
+</div>
+
+
+    <main id="rules-content">
+        <!-- Basic Information Section -->
+        <section id="basic-info">
+            <h2>ℹ️ About ActiPoints</h2>
+            <p>
+                Apart from technical knowledge and skills, to be successful as professionals, students should have excellent
+                <strong>soft skills, leadership qualities, and team spirit</strong>. They should also possess
+                <strong>entrepreneurial capabilities and societal commitment</strong>.
+            </p>
+            <p>
+                To nurture these qualities, <strong>KTU has introduced Activity Points</strong> that students must earn during their academic
+                stay at the university. These cover <strong>extra-curricular and co-curricular activities</strong>.
+            </p>
+            <ul>
+                <li>📌 <strong>B.Tech students</strong> must earn <strong>100 activity points</strong> to qualify for their degree.</li>
+                <li>📌 <strong>Lateral entry students</strong> (joining from the 3rd semester) need <strong>75 points</strong>.</li>
+                <li>📌 The points are awarded on a <strong>pass/fail basis</strong> and carry <strong>2 credits</strong>, but do not affect CGPA.</li>
+                <li>📌 NSS & NCC points can be entered <strong>only after completing a 2-year program</strong>.</li>
+            </ul>
+        </section>
+
+
+
+
+        <hr>
+
+
+
+
+        <!-- ActiPoints Rules -->
+        <section id="rules-list">
+           
+            <p>Here are the official guidelines for earning and managing ActiPoints.</p>
+
+
+
+
+            <div class="rule">
+                <h3>✅ Activity Verification</h3>
+                <p>All submitted activities must be verified by the faculty coordinator before points are awarded.</p>
+            </div>
+
+
+
+
+            <div class="rule">
+                <h3>✅ Points Distribution</h3>
+                <p>Each type of activity has a different point value based on achievement, zone, and category.</p>
+            </div>
+
+
+
+
+            <div class="rule">
+                <h3>❌ Plagiarism Policy</h3>
+                <p>If an activity submission is found to be plagiarized, the student will be disqualified from earning ActiPoints.</p>
+            </div>
+
+
+
+
+            <div class="rule">
+                <h3>🔄 Re-evaluation Requests</h3>
+                <p>If you think your points were miscalculated, you can contact admin.</p>
+            </div>
+        </section>
+
+
+        <a href="{% static 'KTU Rules and Guidelines.pdf' %}" download class="download-btn">📥 Download Full Rules</a>
+    </main>
+</body>
+</html>
+
+
+
+
+

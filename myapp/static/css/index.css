@@ -1,0 +1,71 @@
+body {
+    font-family: "Alegreya Sans", sans-serif;
+    background-color: #AEC6CF; /* Updated background color */
+    color: #F7F6F6;
+    margin: 50px; /* Added margin to the page */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Align content to the top */
+    height: 100vh;
+}
+
+.actipoints {
+    width: 293px;
+    height: 87px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 70px;
+    letter-spacing: 0.5px;
+    text-align: center; /* Center text */
+    margin-top: 20px; /* Add some space at the top */
+}
+
+.track-manage-and-verify-your-activity-points-wit {
+    width: 1200px;
+    height: 57px;
+    color: #F7F6F6;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    text-align: center; /* Center text */
+    margin-top: 10px; /* Add some space below the title */
+}
+
+.login-buttons-container {
+    display: flex; /* Align buttons horizontally */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 300px; /* Space between buttons */
+    margin-top: 160px; /* Add space above the buttons */
+}
+
+.login-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center icon and button */
+}
+
+.login-button img {
+    width: 200px; /* Adjust icon size */
+    height: 200px;
+    border-radius: 52px 52px 52px 52px;
+    margin-bottom: 30px; /* Space between icon and button */
+}
+
+.button-9, .button-12, .button-14 {
+    width: 200px;
+    height: 50px;
+    padding: 0px 16px;
+    background: #6E31DE;
+    color: #FFFFFF;
+    border: 2px solid #6E31DE;
+    border-radius: 9px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    text-decoration: none; /* Remove underline */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}

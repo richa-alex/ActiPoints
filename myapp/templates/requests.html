@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Consistent with the provided CSS */
+        body {
+            background-color: #AEC6CF;
+            color: #FFFFFF;
+            font-family: "Helvetica", sans-serif;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            /* For positioning the back button */
+        }
+
+        .actipoints-1 {
+            width: 293px;
+            height: 87px;
+            color: #FFFFFF;
+            font-family: "Alegreya Sans";
+            font-weight: bold;
+            font-size: 60px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        
+        .you-are-40-there- {
+            width: 222px;
+            height: 36px;
+            color: #2c3e50;
+            font-family: "Helvetica";
+            font-weight: 400;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .your-achievements- {
+            width: 249px;
+            height: 28px;
+            color: #FFFFFF;
+            font-family: "Helvetica";
+            font-weight: bold;
+            font-size: 26px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .activity-container {
+            background: #FFFFFF;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .activity-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 2px solid #C7C7CC;
+        }
+
+        .activity-row:last-child {
+            border-bottom: none;
+        }
+
+        .activity-name {
+            width: 599px;
+            color: #030303;
+            font-family: "Helvetica";
+            font-weight: 400;
+            font-size: 17px;
+            text-align: left;
+        }
+
+        .activity-status {
+            width: 100px;
+            padding: 5px;
+            border-radius: 4px;
+            text-align: center;
+            font-family: "Helvetica";
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .activity-status.pending {
+            background: #B70F0A;
+            /* Red for pending */
+            color: #FFFFFF;
+        }
+
+        .activity-status.approved {
+            background: #629C44;
+            /* Green for approved */
+            color: #FFFFFF;
+        }
+
+        .view-document {
+            cursor: pointer;
+            color: #6E31DE;
+            font-size: 18px;
+        }
+
+        .view-document:hover {
+            color: #5a1fc9;
+            /* Darker purple on hover */
+        }
+
+        .document-dropdown {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #F8F9FA;
+            border: 1px solid #C7C7CC;
+            border-radius: 6px;
+        }
+
+        .document-dropdown a {
+            color: #6E31DE;
+            text-decoration: none;
+        }
+
+        .document-dropdown a:hover {
+            text-decoration: underline;
+        }
+
+        .button-11 {
+            width: 200px;
+            height: 48px;
+            padding: 0px 16px;
+            background: #6E31DE;
+            color: #FFFFFF;
+            border: 2px solid #6E31DE;
+            border-radius: 9px;
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            top: 20px;      /* Adjust distance from top */
+            right: 20px;  
+            text-decoration: none; /* Remove underline */
+            display: flex; /* Use flexbox */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+        
+        }
+
+        .button-11:hover {
+            background: #5a1fc9;
+        }
+
+        .verified,
+        .pending {
+            width: 104px;
+            color: #000000;
+            font-family: "Helvetica";
+            font-weight: 700;
+            font-size: 20px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Back Button -->
+    <div class="dashboard-button">
+        <a href="{% url 'faculty_dashboard' %}" class="button-11">Back to Dashboard</a>
+    </div>
+
+    <div class="actipoints-1">ActiPoints</div>
+
+    <!-- Thicker Progress Bar -->
+    <div class="progress-bar-1">
+        <div class="progress-bar-fill"></div>
+    </div>
+
+    <!-- Pending Activities -->
+    <div class="pending">Pending</div>
+    <div class="activity-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Activity Name</th>
+                    <th>Status</th>
+                    <th>Approve/Reject</th>
+                    <th>Certificate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for submission in submissions %}
+                {% if submission.3 == 'pending' %}
+                <tr>
+                    <td style="color: #000000;">{{submission.19}} - {{ submission.1 }} </td>
+                    <td class="text-warning" style="color: #000000;">Pending</td>
+                    <td>
+                        <button class="btn btn-success btn-sm" onclick="approveActivity('{{ submission.0 }}')">
+                            <i class="fa-solid fa-thumbs-up"></i>Approved
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick="rejectActivity('{{ submission.0 }}')">
+                            <i class="fa-solid fa-thumbs-down"></i> Reject
+                        </button>
+
+                    </td>
+                    <td>
+                        <a href="http://127.0.0.1:8000/{{ submission.12 }}" class="btn btn-info btn-sm" target="_blank">
+                            View Certificate
+                        </a>
+                    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        // Function to toggle document dropdown
+        function toggleDocument(activity) {
+            const dropdown = document.getElementById(`${activity}-document`);
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            } else {
+                dropdown.style.display = 'block';
+            }
+        }
+        
+        // Function to get CSRF token from cookies
+        function getCSRFToken() {
+            let cookieValue = null;
+            let cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i].trim();
+                if (cookie.startsWith("csrftoken=")) {
+                    cookieValue = cookie.substring("csrftoken=".length, cookie.length);
+                    break;
+                }
+            }
+            return cookieValue;
+        }
+
+        function approveActivity(activityId) {
+    if (!confirm("Are you sure you want to approve this activity?")) return;
+    
+    $.ajax({
+        url: "/faculty/approve-activity/",  // Use relative URL
+        type: "POST",
+        headers: { "X-CSRFToken": getCSRFToken() },  // Use headers instead
+        contentType: "application/json",
+        data: JSON.stringify({ activity_id: activityId }),
+        success: function(response) {
+            if (response.success) {
+                alert("Activity approved successfully!");
+                location.reload();
+            } else {
+                alert("Error: " + (response.message || "Unknown error"));
+            }
+        },
+        error: function(xhr) {
+            console.error("Error:", xhr.responseText);
+            alert("Error: " + (xhr.responseJSON?.message || xhr.statusText));
+        }
+    });
+}
+
+function rejectActivity(activityId) {
+    const reason = prompt("Please enter the reason for rejection:");
+    if (!reason || reason.trim() === "") {
+        alert("Rejection reason cannot be empty");
+        return;
+    }
+
+    if (!confirm("Are you sure you want to reject this activity?")) return;
+
+    $.ajax({
+        url: "/faculty/reject-activity/",
+        type: "POST",
+        headers: { "X-CSRFToken": getCSRFToken() },
+        contentType: "application/json",
+        data: JSON.stringify({
+            activity_id: activityId,
+            reason: reason
+        }),
+        success: function(response) {
+            if (response.success) {
+                alert("Activity rejected successfully!");
+                location.reload();
+            } else {
+                alert("Error: " + (response.message || "Unknown error"));
+            }
+        },
+        error: function(xhr) {
+            console.error("Error:", xhr.responseText);
+            alert("Error: " + (xhr.responseJSON?.message || xhr.statusText));
+        }
+    });
+}
+    </script>
+</body>
+
+</html>

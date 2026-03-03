@@ -1,0 +1,227 @@
+
+    body {
+        font-family: "Alegreya Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #AEC6CF;
+    }
+    
+    .actipoints-1 {
+        width: 293px;
+        height: 70px;
+        color: #FFFFFF;
+        font-family: "Alegreya Sans", sans-serif;
+        font-weight: bold;
+        font-size: 60px;
+        letter-spacing: 0.5px;
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Space between menu icon and ActiPoints text */
+    }
+    
+    
+    .menu-icon-1 {
+        width: 60px;
+        height: 90px;
+        background: #AEC6CF;
+        cursor: pointer; /* Indicates the menu icon is clickable */
+        margin-top: 80px;
+        margin-bottom: 80px;
+        margin-left: 20px;
+        font-size: 60px;
+    }
+    
+    .top-right-icons {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .dashboard-button .button-11 {
+        height: 30px;
+        background-color: #5a1fc7;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 9px;
+        text-decoration: none; /* Remove underline */
+        display: flex; /* Use flexbox */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+    }
+    
+    .dashboard-button .button-11:hover {
+        background-color: #5a1fc7;
+    }
+    
+    .dashboard-container {
+        display: flex;
+        margin: 20px;
+    }
+    
+    .menu-options {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        background-color: #AEC6CF;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .menu-options a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 3px;
+        transition: background-color 0.3s;
+        font-family: "Alike", serif;
+        font-size: 18px;
+    }
+    
+    .menu-options a:hover {
+        background-color: #AEC6CF;
+    }
+    
+    .student_management, .faculty_management, .rules, .upload_events, .a_profile {
+        width: auto;
+        height: 36px;
+        color: #FFFFFF;
+        font-family: "Helvetica", sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        text-align: left;
+        margin-top: 20px;
+        cursor: pointer; /* Indicates the menu options are clickable */
+    }
+    
+    .context-area {
+        flex-grow: 1;
+        margin-left: 20px;
+    }    
+
+h1 {
+    font-family: "Alegreya Sans", sans-serif;
+    color: #6E31DE;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+
+.back-btn {
+    background: #6E31DE;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+
+.back-btn:hover {
+    background-color: #5a1fc1;
+}
+
+
+#rules-content {
+    max-width: 1500px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
+section {
+    margin-bottom: 30px;
+}
+
+
+h2 {
+    color: #6E31DE;
+    font-family: "Alegreya Sans", sans-serif;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+
+.rule {
+    background: #F8F9FA;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #6E31DE;
+}
+
+
+.rule h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: #2E2E2E;
+}
+
+
+ul {
+    padding-left: 25px;
+}
+
+
+li {
+    margin-bottom: 12px;
+    padding-left: 8px;
+}
+
+
+hr {
+    border: 1px solid #DEE2E6;
+    margin: 30px 0;
+}
+
+
+.download-btn {
+    display: inline-block;
+    background: #6E31DE;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+
+.download-btn:hover {
+    background-color: #5a1fc1;
+}
+
+
+/* Emoji spacing */
+h1::before, h2::before, .rule h3::before {
+    margin-right: 10px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+   
+    #rules-content {
+        padding: 20px;
+    }
+}
