@@ -28,6 +28,10 @@
             <input type="password" name="password" class="text-area-2" placeholder="Enter your password" required>
         </div>
         <button type="submit" class="button-11">Login</button>
+        <br/>
+        <div class="forgot-password">
+            <a href="{% url 'forgot_pass' %}">Forgot Password?</a>
+        </div>
     </form>
     <!-- Display error messages -->
         {% if messages %}

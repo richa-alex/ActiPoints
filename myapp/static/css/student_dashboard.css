@@ -16,40 +16,39 @@ body {
     font-size: 60px;
     letter-spacing: 0.5px;
     text-align: left;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 30px; /* Space between menu icon and ActiPoints text */
+    gap: 10px; /* Space between menu icon and ActiPoints text */
 }
 
 
 .menu-icon-1 {
-    width: 40px;
+    width: 60px;
     height: 90px;
     background: #AEC6CF;
     cursor: pointer; /* Indicates the menu icon is clickable */
     margin-top: 80px;
     margin-bottom: 80px;
+    margin-left: 10px;
     font-size: 60px;
 }
-
 
 .notifications-icon-1 {
     width: 10px;
     height: 60px;
-    color: purple;
     background: #AEC6CF;
     cursor: pointer; /* Indicates the bell icon is clickable */
-    margin-top: 22px;
+    margin-top: 25px;
     margin-bottom: 20px;
-    margin-right: 230px;
+    margin-right: 260px;
     font-size: 30px;
 }
 
 
-.welcome-richa {
-    width: 250px;
+.welcome-message {
+    width: 350px;
     height: 39px;
     color: #FFFFFF;
     font-family: "Helvetica", sans-serif;
@@ -80,15 +79,15 @@ body {
 }
 
 
-.submit-activity, .progress, .rules, .events, .profile {
+.submit_activity, .progress, .rules, .events, .profile {
     width: auto;
     height: 36px;
     color: #FFFFFF;
     font-family: "Helvetica", sans-serif;
     font-weight: 400;
-    font-size: 26px;
+    font-size: 30px;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 20px;
     cursor: pointer; /* Indicates the menu options are clickable */
 }
 
@@ -99,17 +98,27 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 200px;
 }
+
 
 /* Upcoming Events Container */
 .upcoming-events {
-    margin: 20px 0;
+    margin-bottom: 40px;
     padding: 10px;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #AEC6CF;
     text-align: center;
     overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
+}
+
+.upcoming-events h2 {
+    font-size: 30px; /* Adjust size as needed */
+    color: #FFFFFF;
+    margin-top: 0px;
+    margin-bottom: 30px; /* Space below the heading */
+    text-align: center; /* Center the heading */
+    font-family: 'papyrus', fantasy;
+    font-weight: bold; /* Make it bold */
 }
 
 /* Scroll Container */
@@ -117,7 +126,8 @@ body {
     display: flex;
     overflow: hidden; /* Hide overflow */
     white-space: nowrap; /* Prevent wrapping of child elements */
-    width: 100%;
+    width: 1500px;
+    height: 100%;
     position: relative;
 }
 
@@ -133,15 +143,18 @@ body {
 /* Individual Event Poster */
 .event-poster-scroll {
     flex: 0 0 auto; /* Prevent flex items from shrinking */
-    width: 200px; /* Fixed width for each poster */
+    width: 300px; /* Fixed width for each poster */
+    aspect-ratio: 4 / 5; /* Ensures all images maintain the same ratio */
     text-align: center;
-    margin-right: 20px; /* Space between posters */
-    border: 2px solid red; /* Debugging */
+    margin-right: 40px; /* Space between posters */
+    overflow: hidden; /* Prevents image stretching */
 }
 
 .event-poster-scroll img {
     width: 100%;
-    border-radius: 5px;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the area without distortion */
+    border-radius: 10px;
 }
 
 .event-poster-scroll h4 {
@@ -184,6 +197,10 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
+    text-decoration: none; /* Remove underline */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
 }
 
 

@@ -105,7 +105,7 @@
 
 
         .button-23 {
-            width: 166px;
+            width: 200px;
             height: 48px;
             padding: 0px 16px;
             background: #6E31DE;
@@ -118,6 +118,13 @@
             text-align: center;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            position: absolute;
+            top: 20px;      /* Adjust distance from top */
+            right: 20px;  
+            text-decoration: none; /* Remove underline */
+            display: flex; /* Use flexbox */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
         }
 
 
@@ -146,23 +153,34 @@
         <button class="button-15">Cultural Activities</button>
         <button class="button-17">Professional Self Initiatives</button>
         <button class="button-19">Entrepreneurship & Innovation</button>
-        <button class="button-21">Leadership & Management</button>
-       
+        <button class="button-21">Leadership & Management</button>   
     </div>
 
 
     <!-- Back Button with Arrow Icon -->
-    <div class="back-button-container" onclick="window.location.href='student_dashboard';">
-        <div class="arrow-back-icon-1">←</div>
-        <button class="button-23">Back</button>
+    <div class="dashboard-button">
+        <a href="{% url 'student_dashboard' %}" class="button-23">Back to Dashboard</a>
     </div>
-    <script>
-        // Universal category button handler
-        document.querySelectorAll('button[class^="button-"]').forEach(button => {
+   
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all category buttons
+        const buttons = document.querySelectorAll('button[class^="button-"]');
+        
+        // Add click handler to each button
+        buttons.forEach(button => {
             button.addEventListener('click', function() {
-                window.location.href = "{% url 'fill_form' %}";
+                // Get the category name from button text
+                const category = encodeURIComponent(this.textContent.trim());
+                
+                // Construct the URL - using the exact URL pattern from urls.py
+                const fillFormUrl = "/student/fill_form/";
+                
+                // Redirect to fill_form with category parameter
+                window.location.href = `${fillFormUrl}?category=${category}`;
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>

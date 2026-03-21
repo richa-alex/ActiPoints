@@ -89,7 +89,7 @@ body {
     background-color: #AEC6CF;
 }
 
-.student_management, .faculty_management, .rules, .upload_events, .a_profile {
+.submity_activity, .progress, .rules, .events, .profile {
     width: auto;
     height: 36px;
     color: #FFFFFF;

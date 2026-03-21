@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Events - ActiPoints</title>
-    <link rel="stylesheet" href="{% static 'css/faculty_dashboard.css' %}"> 
+    <title>Events - ActiPoints</title>
+    <link rel="stylesheet" href="{% static 'css/student_events.css' %}"> 
 </head>
 <body>
 <!-- Menu Icon and ActiPoints Title -->
@@ -14,37 +14,16 @@
     ActiPoints
 </div>
 
-<div class="welcome-message">
-    Welcome, {{ faculty.username }}!  <!-- Display the faculty's username -->
-</div>
-
 <!-- Top Right Icons (Bell and Logout) -->
 <div class="top-right-icons">
-    <div class="notifications-icon-1">🔔</div> <!-- Bell icon for notifications -->
+   
     <div class="logout-button">
-        <a href="{% url 'index' %}" class="button-11">Logout</a>
+        <a href="{% url 'faculty_dashboard' %}" class="button-11">Back to dashboard</a>
     </div>
 </div>
 
-<!-- Dashboard Container -->
-<div class="dashboard-container">
-    <!-- Menu Bar -->
-    <div class="menu-options" id="menuOptions">
-        <a href="{% url 'faculty_dashboard' %}" style="text-decoration: none;">
-            <div class="faculty_dashboard">Dashboard</div>
-        </a>
-        <a href="{% url 'faculty_events' %}" style="text-decoration: none;">
-            <div class="faculty_events">Events</div>
-        </a>
-        <a href="{% url 'rules' %}" style="text-decoration: none;">
-            <div class="rules">Rules</div>
-        </a>
-        <a href="{% url 'profile' %}" style="text-decoration: none;">
-            <div class="profile">My Profile</div>
-        </a>
-    </div>
 
-    <!-- Context Area (Faculty Events) -->
+    <!-- Context Area (Events) -->
     <div class="context-area">
         <div class="events-list">
             <h2>Upcoming Events</h2>

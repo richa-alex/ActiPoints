@@ -64,7 +64,7 @@ header {
     color: #000000;
     font-family: "Helvetica", sans-serif;
     font-weight: 400;
-    font-size: 26px;
+    font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -100,7 +100,7 @@ header {
     padding: 0px 16px;
     background: #6E31DE;
     color: #FFFFFF;
-    border: 2px solid #6E31DE;
+    border: 2px solid #120d1a;
     border-radius: 9px;
     font-family: "Inter", sans-serif;
     font-weight: 400;

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management - ActiPoints</title>
+    <link rel="stylesheet" href="{% static 'css/student_management.css' %}"> 
+</head>
+<body>
+
+<!-- Menu Icon and ActiPoints Title -->
+<div class="actipoints-1">
+    <div class="menu-icon-1" onclick="toggleMenu()">☰</div> <!-- Menu open/close button -->
+    ActiPoints
+</div>
+
+<!-- Top Right Icons (Dashboard + Search) -->
+<div class="top-right-icons" style="display: flex; align-items: center; justify-content: flex-end; gap: 15px; margin: 10px 20px;">
+
+    <!-- Search Form -->
+    <form method="get" action="" style="display: flex; align-items: center;">
+        <input type="text" name="search" placeholder="Search students..." 
+               value="{{ request.GET.search }}" 
+               style="padding: 5px 10px; border: 1px solid #ccc; border-radius: 4px;">
+        <button type="submit" style="margin-left: 5px; padding: 5px 10px; border: none; background-color:#6E31DE; color: white; border-radius: 4px; cursor: pointer;">
+            Search
+        </button>
+    </form>
+
+    <!-- Dashboard Button -->
+    <div class="dashboard-button">
+        <a href="{% url 'faculty_dashboard' %}" class="button-11">Back to Dashboard</a>
+    </div>
+</div>
+
+<!-- Context Area (Student Management) -->
+<div class="context-area">
+    <div class="student_display">
+        <h2>Student Profiles</h2>
+
+        <!-- Display Students in a Table -->
+        <table class="student-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Registration Number</th>
+                    <th>Points</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'student_progress' student.id %}" class="student-name-link">
+                                {{ student.username }}
+                            </a>
+                        </td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.regno }}</td>
+                        <td>{{ student.points }}</td>
+                        <td>
+                            <a href="{% url 'student_progress' student.id %}" class="view-button">View Progress</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="4">No students found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // Function to toggle menu visibility
+    function toggleMenu() {
+        const menuOptions = document.getElementById('menuOptions');
+        if (menuOptions.style.display === 'none') {
+            menuOptions.style.display = 'flex';
+        } else {
+            menuOptions.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>

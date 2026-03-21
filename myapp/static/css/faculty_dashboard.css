@@ -16,21 +16,22 @@ body {
     font-size: 60px;
     letter-spacing: 0.5px;
     text-align: left;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 30px; /* Space between menu icon and ActiPoints text */
+    gap: 10px; /* Space between menu icon and ActiPoints text */
 }
 
 
 .menu-icon-1 {
-    width: 40px;
+    width: 60px;
     height: 90px;
     background: #AEC6CF;
     cursor: pointer; /* Indicates the menu icon is clickable */
     margin-top: 80px;
     margin-bottom: 80px;
+    margin-left: 10px;
     font-size: 60px;
 }
 
@@ -38,18 +39,15 @@ body {
 .notifications-icon-1 {
     width: 10px;
     height: 60px;
-    color: purple;
     background: #AEC6CF;
     cursor: pointer; /* Indicates the bell icon is clickable */
-    margin-top: 22px;
+    margin-top: 25px;
     margin-bottom: 20px;
-    margin-right: 230px;
+    margin-right: 260px;
     font-size: 30px;
 }
-
-
-.welcome-richa {
-    width: 250px;
+.welcome-message {
+    width: 350px;
     height: 39px;
     color: #FFFFFF;
     font-family: "Helvetica", sans-serif;
@@ -80,15 +78,15 @@ body {
 }
 
 
-.submit-activity, .progress, .rules, .events, .profile {
+.submit_activity, .progress, .rules, .events, .profile {
     width: auto;
     height: 36px;
     color: #FFFFFF;
     font-family: "Helvetica", sans-serif;
     font-weight: 400;
-    font-size: 26px;
+    font-size: 30px;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 20px;
     cursor: pointer; /* Indicates the menu options are clickable */
 }
 
@@ -99,47 +97,86 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 200px;
 }
 
 
+/* Upcoming Events Container */
 .upcoming-events {
-    width: 100%;
-    height: 36px;
-    color: #FFFFFF;
-    font-family: "Bungee Inline";
-    font-weight: 400;
-    font-size: 26px;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #AEC6CF;
     text-align: center;
-    margin-bottom: 20px;
+    overflow: hidden; /* Hide overflow to prevent horizontal scrollbar */
 }
 
-
-.event-posters {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-
-.event-poster {
-    width: 200px;
-    height: 300px;
-    background-color: #6E31DE;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.upcoming-events h2 {
+    font-size: 30px; /* Adjust size as needed */
     color: #FFFFFF;
-    font-size: 20px;
-    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 30px; /* Space below the heading */
+    text-align: center; /* Center the heading */
+    font-family: 'papyrus', fantasy;
+    font-weight: bold; /* Make it bold */
 }
 
+/* Scroll Container */
+.scroll-container {
+    display: flex;
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap; /* Prevent wrapping of child elements */
+    width: 1500px;
+    height: 100%;
+    position: relative;
+}
 
-.event-poster img {
+/* Event Posters Scroll */
+.event-posters-scroll {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: scrollLeft 20s linear infinite; /* Infinite scroll animation */
+}
+
+/* Individual Event Poster */
+.event-poster-scroll {
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    width: 300px; /* Fixed width for each poster */
+    aspect-ratio: 4 / 5; /* Ensures all images maintain the same ratio */
+    text-align: center;
+    margin-right: 40px; /* Space between posters */
+    overflow: hidden; /* Prevents image stretching */
+}
+
+.event-poster-scroll img {
     width: 100%;
     height: 100%;
+    object-fit: cover; /* Ensures image fills the area without distortion */
     border-radius: 10px;
-    object-fit: cover;
+}
+
+.event-poster-scroll h4 {
+    margin: 10px 0 5px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.event-poster-scroll p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Infinite Scroll Animation */
+@keyframes scrollLeft {
+    0% { transform: translateX(0); } /* Start from the initial position */
+    100% { transform: translateX(-50%); } /* Move to the left by 50% (half of the duplicated content) */
+}
+
+/* Pause Scrolling on Hover */
+.scroll-container:hover .event-posters-scroll {
+    animation-play-state: paused; /* Pause animation when hovering */
 }
 
 
@@ -159,6 +196,10 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
+    text-decoration: none; /* Remove underline */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
 }
 
 

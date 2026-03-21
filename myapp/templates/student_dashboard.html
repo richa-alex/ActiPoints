@@ -20,7 +20,6 @@ ActiPoints
 
 <!-- Top Right Icons (Bell and Logout) -->
 <div class="top-right-icons">
-<div class="notifications-icon-1">🔔</div> <!-- Bell icon for notifications -->
 <div class="logout-button">
     <a href="{% url 'index' %}" class="button-11">Logout</a>
 </div>
@@ -34,7 +33,7 @@ ActiPoints
                 <a href="{% url 'submit_activity' %}" style="text-decoration: none;">
                     <div class="submit_activity">Submit Activity</div>
                 </a>
-                <a href="" style="text-decoration: none;">
+                <a href="{% url 'student_progress' %}" style="text-decoration: none;">
                     <div class="progress">Progress</div>
                 </a>
                 <a href="{% url 'rules' %}" style="text-decoration: none;">
@@ -48,49 +47,47 @@ ActiPoints
                 </a>
             </div>
 
-            <div class="context-area">
-                <div class="upcoming-events">
-                    <h2>Upcoming Events</h2>
-                    <div class="scroll-container">
-                        <div class="event-posters-scroll" id="event-list">
-                            <!-- Original Events -->
-                            {% for event in events %}
-                                <div class="event-poster-scroll">
-                                    <img src="{{ event.poster.url }}" alt="{{ event.title }}">
-                                    <h4>{{ event.title }}</h4>
-                                    <p>{{ event.date }}</p>
-                                </div>
-                            {% endfor %}
-                            <!-- Duplicated Events -->
-                            {% for event in events %}
-                                <div class="event-poster-scroll">
-                                    <img src="{{ event.poster.url }}" alt="{{ event.title }}">
-                                    <h4>{{ event.title }}</h4>
-                                    <p>{{ event.date }}</p>
-                                </div>
-                            {% endfor %}
-                        </div>
+<!-- Context Area (Centered Upcoming Events) -->
+<div class="context-area">
+    <div class="upcoming-events">
+        <h2>Upcoming Events!</h2>
+        <div class="scroll-container">
+            <div class="event-posters-scroll" id="event-list">
+                <!-- Original Events -->
+                {% for event in events %}
+                    <div class="event-poster-scroll">
+                        <img src="{{ event.poster.url }}" alt="{{ event.title }}">
                     </div>
-                </div>
+                {% endfor %}
+                <!-- Duplicated Events -->
+                {% for event in events %}
+                    <div class="event-poster-scroll">
+                        <img src="{{ event.poster.url }}" alt="{{ event.title }}">
+                    </div>
+                {% endfor %}
             </div>
+        </div>
+    </div>
+</div>
+</div>
    
-<script>
-    // Function to toggle menu visibility
-    function toggleMenu() {
-        const menuOptions = document.getElementById('menuOptions');
-        if (menuOptions.style.display === 'none') {
-            menuOptions.style.display = 'flex';
-        } else {
-            menuOptions.style.display = 'none';
+    <script>
+        // Function to toggle menu visibility
+        function toggleMenu() {
+            const menuOptions = document.getElementById('menuOptions');
+            if (menuOptions.style.display === 'none') {
+                menuOptions.style.display = 'flex';
+            } else {
+                menuOptions.style.display = 'none';
+            }
         }
-    }
 
-    window.onload = function () {
+        window.onload = function () {
     const eventList = document.getElementById('event-list');
     const eventItems = eventList.innerHTML; // Get the original content
     eventList.innerHTML += eventItems; // Duplicate the content
-};
-</script>
+        };
+    </script>
 </body>
 </html>
 

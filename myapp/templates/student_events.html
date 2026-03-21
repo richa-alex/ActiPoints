@@ -10,39 +10,18 @@
 <body>
 <!-- Menu Icon and ActiPoints Title -->
 <div class="actipoints-1">
-    <div class="menu-icon-1" onclick="toggleMenu()">☰</div> <!-- Menu open/close button -->
+    <div class="menu-icon-1" onclick="toggleMenu()"></div> <!-- Menu open/close button -->
     ActiPoints
-</div>
-
-<div class="welcome-message">
-    Welcome, {{ student.username }}!  <!-- Display the student's username -->
 </div>
 
 <!-- Top Right Icons (Bell and Logout) -->
 <div class="top-right-icons">
-    <div class="notifications-icon-1">🔔</div> <!-- Bell icon for notifications -->
+   
     <div class="logout-button">
-        <a href="{% url 'index' %}" class="button-11">Logout</a>
+        <a href="{% url 'student_dashboard' %}" class="button-11">Back to dashboard</a>
     </div>
 </div>
 
-<!-- Dashboard Container -->
-<div class="dashboard-container">
-    <!-- Menu Bar -->
-    <div class="menu-options" id="menuOptions">
-        <a href="{% url 'student_dashboard' %}" style="text-decoration: none;">
-            <div class="student_dashboard">Dashboard</div>
-        </a>
-        <a href="{% url 'student_events' %}" style="text-decoration: none;">
-            <div class="events">Events</div>
-        </a>
-        <a href="{% url 'rules' %}" style="text-decoration: none;">
-            <div class="rules">Rules</div>
-        </a>
-        <a href="{% url 'profile' %}" style="text-decoration: none;">
-            <div class="profile">My Profile</div>
-        </a>
-    </div>
 
     <!-- Context Area (Events) -->
     <div class="context-area">
