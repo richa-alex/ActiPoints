@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Events - ActiPoints</title>
+    <link rel="stylesheet" href="{% static 'css/a_profile.css' %}"> 
+</head>
+<body>
+<!-- Menu Icon and ActiPoints Title -->
+<div class="actipoints-1">
+    <div class="menu-icon-1" onclick="toggleMenu()">☰</div> <!-- Menu open/close button -->
+    ActiPoints
+</div>
+
+<!-- Top Right Icons (Bell and Logout) -->
+<div class="top-right-icons">
+    <div class="dashboard-button">
+        <a href="{% url 'adminn_dashboard' %}" class="button-11">⬅ Back to Dashboard</a>
+    </div>
+</div>
+
+<!-- Dashboard Container -->
+<div class="dashboard-container">
+    <!-- Menu Bar -->
+    <div class="menu-options" id="menuOptions">
+        <a href="{% url 'student_management' %}" style="text-decoration: none;">
+            <div class="student_management">Student Management</div>
+        </a>
+        <a href="{% url 'faculty_management' %}" style="text-decoration: none;">
+            <div class="faculty_management">Faculty Management</div>
+        </a>
+        <a href="{% url 'upload_events' %}" style="text-decoration: none;">
+            <div class="upload_events">Upload Events</div>
+        </a>
+        <a href="{% url 'rules' %}" style="text-decoration: none;">
+            <div class="rules">Rules</div>
+        </a>
+        <a href="{% url 'a_profile' %}" style="text-decoration: none;">
+            <div class="a_profile">My Profile</div>
+        </a>
+    </div>
+
+<!-- Context Area (Admin Profile) -->
+<div class="context-area">
+    <div class="form-container">
+        <h2 class="form-title">My Profile</h2>
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label class="form-label" for="username">Username:</label>
+                <input type="text" class="text-area" id="username" name="username" value="{{ admin.username }}" placeholder="Enter username">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="email">Email ID:</label>
+                <input type="email" class="text-area" id="email" name="email" value="{{ admin.email }}" placeholder="Enter email">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="reg_no">Registration No:</label>
+                <input type="text" class="text-area" id="reg_no" name="reg_no" value="{{ admin.regno }}" placeholder="Enter registration number">
+            </div>
+
+            <div class="button-container">
+                <a href="{% url 'adminn_dashboard' %}" class="button-13">Save Changes</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+    <script>
+        // Function to toggle menu visibility
+        function toggleMenu() {
+            const menuOptions = document.getElementById('menuOptions');
+            if (menuOptions.style.display === 'none') {
+                menuOptions.style.display = 'flex';
+            } else {
+                menuOptions.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActiPoints Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/faculty_dashboard.css' %}"> 
+</head>
+<body>
+<!-- Menu Icon and ActiPoints Title -->
+<div class="actipoints-1">
+<div class="menu-icon-1" onclick="toggleMenu()">☰</div> <!-- Menu open/close button -->
+ActiPoints
+</div>
+
+<div class="welcome-message">
+    Welcome, {{ faculty.username }}!  <!-- Display the faculty's username -->
+</div>
+
+<!-- Top Right Icons (Bell and Logout) -->
+<div class="top-right-icons">
+<div class="notifications-icon-1">🔔</div> <!-- Bell icon for notifications -->
+<div class="logout-button">
+    <a href="{% url 'index' %}" class="button-11">Logout</a>
+</div>
+</div>
+
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Menu Bar -->
+            <div class="menu-options" id="menuOptions">
+                <a href="{% url 'submit_activity' %}" style="text-decoration: none;">
+                    <div class="submit_activity">Submit Activity</div>
+                </a>
+                <a href="" style="text-decoration: none;">
+                    <div class="progress">Progress</div>
+                </a>
+                <a href="{% url 'rules' %}" style="text-decoration: none;">
+                    <div class="rules">Rules</div>
+                </a>
+                <a href="" style="text-decoration: none;">
+                    <div class="events">Events</div>
+                </a>
+                <a href="{% url 'profile' %}" style="text-decoration: none;">
+                    <div class="profile">My Profile</div>
+                </a>
+            </div>
+
+<!-- Context Area (Upcoming Events) -->
+    <div class="context-area">
+        <div class="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <div class="event-posters-scroll">
+                {% for event in events %}
+                    <div class="event-poster-scroll">
+                        <img src="{{ event.poster.url }}" alt="{{ event.title }}">
+                        <h4>{{ event.title }}</h4>
+                        <p>{{ event.date }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+   
+    <script>
+        // Function to toggle menu visibility
+        function toggleMenu() {
+            const menuOptions = document.getElementById('menuOptions');
+            if (menuOptions.style.display === 'none') {
+                menuOptions.style.display = 'flex';
+            } else {
+                menuOptions.style.display = 'none';
+            }
+        }
+
+        // Function to enable automatic horizontal scrolling
+    function autoScroll() {
+        const scrollContainer = document.querySelector('.event-posters-scroll');
+        let scrollAmount = 0;
+        const scrollStep = 1; // Adjust the scroll speed
+        const scrollDelay = 20; // Adjust the scroll delay (in milliseconds)
+
+        function scroll() {
+            scrollContainer.scrollLeft += scrollStep;
+            scrollAmount += scrollStep;
+
+            // Reset scroll position when reaching the end
+            if (scrollAmount >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+                scrollContainer.scrollLeft = 0;
+                scrollAmount = 0;
+            }
+
+            setTimeout(scroll, scrollDelay); // Continue scrolling
+        }
+
+        scroll(); // Start scrolling
+    }
+
+    // Start automatic scrolling when the page loads
+    window.onload = autoScroll;
+    </script>
+</body>
+</html>
+
+
